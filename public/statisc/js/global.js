@@ -1,5 +1,5 @@
 ﻿layui.config({
-    base: "/FlowProject/food/public/statisc/layui/lay/modules/extendplus/"
+    base: "/Food/public/statisc/layui/lay/modules/extendplus/"
 }).extend({
     navbar: "navbar/navbar",
     tab: "navbar/tab",
