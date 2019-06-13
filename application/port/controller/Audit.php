@@ -177,7 +177,7 @@ class Audit extends Controller
             ->select();
       foreach ($data as $key => $val) {
         $data[$key]['user_like'] = count(explode(",",$val['user_like']));
-        $data[$key]['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$val['img'];
+        $data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$val['img'];
         $data[$key]['inventory'] = unserialize($val['inventory']);//清单
         $data[$key]['time'] = date("Y-m-d",$val['time']);//时间
       }

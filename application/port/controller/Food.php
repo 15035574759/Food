@@ -30,7 +30,7 @@ class Food extends Controller
 
 		$data = DB::name("veriety")->where(['status'=>1,'audit_start'=>1])->order("`like` desc")->limit(5)->field("id,img,like")->select();
 		foreach ($data as $key => $value) {
-			$data[$key]['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$value['img'];
+			$data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$value['img'];
 		}
 		// p($data);
 		if(false == $data)
@@ -56,10 +56,10 @@ class Food extends Controller
 
 		$res = DB::name("class")->where(['pid'=>0,'start'=>1])->order("sort asc")->select();
 		foreach ($res as $key => $val) {
-			$data[$key]['image'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$val['image'];
+			$data[$key]['image'] = 'https://www.qinlh.com/Food/public'.$val['image'];
 			$res[$key]['class_names'] = DB::name("class")->where(['pid'=>$val['id'],'start'=>1])->select();
 			foreach ($res[$key]['class_names'] as $k => $v) {
-				$res[$key]['class_names'][$k]['image'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$v['image'];
+				$res[$key]['class_names'][$k]['image'] = 'https://www.qinlh.com/Food/public'.$v['image'];
 			}
 		}
 
@@ -127,7 +127,7 @@ class Food extends Controller
 					->select();
 		foreach ($data as $key => $value) {
 			$data[$key]['inventory'] = unserialize($value['inventory']);
-			$data[$key]['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$value['img'];
+			$data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$value['img'];
 			$data[$key]['time'] = date("Y-m-d",$value['time']);//时间
 		}
 
@@ -191,7 +191,7 @@ class Food extends Controller
 					->select();
 		foreach ($data as $key => $value) {
 			$data[$key]['inventory'] = unserialize($value['inventory']);
-			$data[$key]['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$value['img'];
+			$data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$value['img'];
 			$data[$key]['time'] = date("Y-m-d",$value['time']);//时间
 		}
 		// p($data);
@@ -231,7 +231,7 @@ class Food extends Controller
 		// 	foreach ($data as $key => $value) {
 		// 		$data[$key]['inventory'] = unserialize($value['inventory']);
 		// 		$data[$key]['user_like'] = count(explode(",",$value['user_like']));
-		// 		$data[$key]['img'] = 'https://h5php.xingyuanauto.com/food/public'.$value['img'];
+		// 		$data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$value['img'];
 		// 		$data[$key]['time'] = date("Y-m-d",$value['time']);//时间
 		// 	}
 		// 	// p($data);
@@ -279,7 +279,7 @@ class Food extends Controller
 						foreach ($data as $key => $value) {
 							$data[$key]['inventory'] = unserialize($value['inventory']);
 							$data[$key]['user_like'] = count(explode(",",$value['user_like']));
-							$data[$key]['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$value['img'];
+							$data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$value['img'];
 							$data[$key]['time'] = date("Y-m-d",$value['time']);//时间
 						}
 
@@ -323,7 +323,7 @@ class Food extends Controller
 
 		//查询项目详情数据
 		$data = DB::name("veriety")->where("id",$id)->find();
-		$data['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$data['img'];
+		$data['img'] = 'https://www.qinlh.com/Food/public'.$data['img'];
 		$data['inventory'] = unserialize($data['inventory']);//清单
 		$data['thumbnail'] = explode(",",unserialize($data['thumbnail']));//操作步骤
 		$data['step'] = explode("\n",trim($data['step'])); //操作步骤
@@ -340,7 +340,7 @@ class Food extends Controller
 		}
 
 		foreach ($data['thumbnail'] as $key => $val) {
-			$data['thumbnail'][$key] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$val;
+			$data['thumbnail'][$key] = 'https://www.qinlh.com/Food/public'.$val;
 		}
 		// p($data);
 		if($openid && $openid !== "")
@@ -455,7 +455,7 @@ class Food extends Controller
 					->field("v.id,v.img,v.name,v.inventory,v.author,v.collect,v.user_like,v.like,v.time")
 					->select();
 		foreach ($data as $key => $val) {
-			$data[$key]['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$val['img'];
+			$data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$val['img'];
 			$data[$key]['inventory'] = unserialize($val['inventory']);//清单
 			$data[$key]['time'] = date("Y-m-d",$val['time']);//时间
 		}

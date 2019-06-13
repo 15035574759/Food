@@ -38,7 +38,7 @@ class AuditModel extends Model
                 ->select();
         foreach ($data as $key => $value) {
     			$data[$key]['inventory'] = unserialize($value['inventory']);
-    			$data[$key]['img'] = 'https://h5php.xingyuanauto.com/FlowProject/food/public'.$value['img'];
+    			$data[$key]['img'] = 'https://www.qinlh.com/Food/public'.$value['img'];
     			$data[$key]['time'] = date("Y-m-d",$value['time']);//时间
     		}
 
